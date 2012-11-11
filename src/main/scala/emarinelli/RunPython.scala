@@ -9,14 +9,16 @@ object RunPython {
 
     {
       val i = 1
-      val r1 = jep.invoke("fn1", i.asInstanceOf[AnyRef])
-      println(s"fn1($i) = $r1")
+      val fn = "fn1"
+      val r1 = jep.invoke(fn, i.asInstanceOf[AnyRef])
+      println(s"$fn($i) = $r1")
     }
 
     {
       val s = "world"
-      val r2 = jep.invoke("fn2", s.asInstanceOf[AnyRef])
-      println(s"""fn1("$s") = $r2""")
+      val fn = "fn2"
+      val r2 = jep.invoke(fn, s.asInstanceOf[AnyRef])
+      println(s"""$fn("$s") = $r2""")
     }
   }
 }
